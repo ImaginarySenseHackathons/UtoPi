@@ -1,0 +1,59 @@
+realpath
+
+Check by Zahroe from the Noun Project \/
+Check by Jake Park from the Noun Project (\/)
+street by Viktor Fedyuk (Tim P) from the Noun Project (S)
+Flood by Yazmin Alanis from the Noun Project Y
+floods by ani from the Noun Project /
+Volcano by Masrur Mahmood from the Noun Project
+rockslide by Yang LIU from the Noun Project
+Restaurant by Federico Panzano from the Noun Project
+Home by Gregor Cresnar from the Noun Project
+Water by chabib ali machbubi from the Noun Project
+Gasoline by Mitchell Geere from the Noun Project
+Energy by ArtLivika from the Noun Project
+power source by Zaim from the Noun Project
+Medicine by André Luiz from the Noun Project
+Medicine by Creative Stall from the Noun Project
+Doctor’s Office by Vectors Market from the Noun Project (H)
+Doctor by Wilson Joseph from the Noun Project
+dog care by David from the Noun Project
+Fast Fly by Felisberto Piazza from the Noun Project
+bag by ahmad from the Noun Project
+Recycle by RHADZONY STORCH JUNIOR from the Noun Project
+person by amantaka from the Noun Project
+Skull by Kyle Tezak from the Noun Project
+questions by Gregor Cresnar from the Noun Project
+Battery by Chrystina Angeline from the Noun Project
+Food by Atif Arshad from the Noun Project
+
+MENU
+1. Reportar
+    A. Carretera
+        i. Ruta bloqueada
+        ii. Derrumbe
+	    iii. Inundación
+	    v. Erupción volcánica
+    A. Clima
+	    vii. Avalancha
+	    iv. Tornado
+    B. Alimentos Agua
+        i. Restaurantes
+        ii. Centros de acopio
+        iii. Oasis
+   C. Energía
+        i. Puestos de gasolina
+       ii. Lugares de recarga
+        iii. Servicios de energía (write only)
+    D. Salud
+        Farmacia
+     	Hospitales
+        Doctores
+        Centros veterinarios
+        Medicamentos disponibles
+    E. Basura
+        Recogido de basura (write only)
+        Centros de reciclaje
+    F. Personas
+        Desapariciones (write only)
+        Muertes (write only)
