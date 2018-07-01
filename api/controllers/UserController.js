@@ -9,8 +9,7 @@ module.exports = {
   // GET /user
   // Look for a user info with an id in the database.
   find: async function (req, res) {
-    // CONST & VARS
-    const userId = Number(req.param('id'));
+    // VARS
     let users;
     // OPERATIONS
     try {
@@ -23,10 +22,7 @@ module.exports = {
           return res.serverError(err);
       }
     }
-    if (!users) {
-      return res.notFound('User with id \'' + userId + '\' was not found');
-    }
-    return res.ok(user);
+    return res.ok();
   },
   // GET /user/:id
   // Look for a user info with an id in the database.
@@ -50,15 +46,22 @@ module.exports = {
   // POST /user
   // Create a new user in the database
   create: async function (req, res) {
+    // VARIABLES
+    let body,
+      user;
     // VALIDATE
     if (!req.param('email')) return res.badRequest('Please specify \'email\'');
     if (!req.param('firstName')) return res.badRequest('Please specify \'firstName\'');
     if (!req.param('lastName')) return res.badRequest('Please specify \'lastName\'');
+    body = {
+      email: req.param('email'),
+      firstName: req.param('firstName'),
+      latName: req.param('lastName')
+    };
     // Add to database
-    let user;
     try {
       // Attempt to look the user up in the database.
-      user = await User.create(req.body).fetch();
+      user = await User.create(body).fetch();
     } catch (err) {
       // If unknown error.
       switch (err.name) {
@@ -70,11 +73,7 @@ module.exports = {
           return res.serverError(err, 'Failed to create user');
       }
     }
-    // Makes sure that the user has been created
-    if (user)
-      return res.created({token: userToken.issue({userId: user.id})});
-
-    return res.forbidden('You\'re not allowed to create a new user.');
+    return res.ok(body);
   },
   // PATCH /user/:id
   // Edit a user info in the database.

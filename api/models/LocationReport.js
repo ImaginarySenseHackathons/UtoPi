@@ -14,7 +14,7 @@ module.exports = {
     //  ╩  ╩╚═╩╩ ╩╩ ╩ ╩ ╚╝ ╚═╝╚═╝
     type: {
       type: 'string',
-      isIn: ['Blocked Route', 'Landfall', 'Flood', 'Volcanic Eruption']
+      isIn: ['Roadblock', 'Landfall', 'Flood']
     },
     place: {
       type: 'string',

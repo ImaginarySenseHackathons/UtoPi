@@ -13,7 +13,7 @@ module.exports = {
     //  ╠═╝╠╦╝║║║║║ ║ ║╚╗╔╝║╣ ╚═╗
     //  ╩  ╩╚═╩╩ ╩╩ ╩ ╩ ╚╝ ╚═╝╚═╝
 
-    state: {
+    status: {
       type: 'string',
       isIn: ['Collapsed', 'Blocked', 'Partially Blocked', 'Solved']
     },
