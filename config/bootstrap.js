@@ -19,9 +19,13 @@ module.exports.bootstrap = async function(done) {
   // if (await User.count() > 0) {
   //   return done();
   // }
-  //
+  // USER
+  await User.createEach([
+    { email: 'admin@imaginary.tech', name: 'Imaginary', lastName: 'Sense' },
+  ]);
+  // LOCATION REPORT
   // await User.createEach([
-    // { email: 'admin@imaginary.tech', firstName: 'Administrator', lastName: 'Administrator' },
+  //   { email: 'admin@imaginary.tech', name: 'Imaginary', lastName: 'Sense' },
   // ]);
   // ```
 

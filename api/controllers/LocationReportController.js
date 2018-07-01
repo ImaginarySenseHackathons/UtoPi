@@ -52,7 +52,6 @@ module.exports = {
       }];
     // ADD TO DATABASE
     // First table
-    sails.log("Koko ni desuka ?");
     try {
       report[1] = await LocationReport.create(body[0]).fetch();
     } catch (err) {
@@ -63,17 +62,14 @@ module.exports = {
           return res.serverError(err, 'Failed to get report');
       }
     }
-    sails.log("Are we there yet?");
     // Prepare data for second table
     body[1] = Object.assign( {}, body[1], {
       locationreport: report[1].id  // locationreport está en minúscula porque si no no sirve... Más misterios de Sails!
     });
-    sails.log(body[1]);
     // Second table
     try {
       report[2] = await RoadReport.create(body[1]).fetch();
     } catch (err) {
-      sails.log("Koko ni mo desuka ?");
       switch (err.name) {
         case 'UsageError':
           return res.badRequest(err);
@@ -81,7 +77,6 @@ module.exports = {
           return res.serverError(err);
       }
     }
-    sails.log("Koko ni mo desuka 3 ?");
     // PREPARE OUTPUT
     report[0] = Object.assign( {}, report[1], report[2] );
     // SEND RESPONSE

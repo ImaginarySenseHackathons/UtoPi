@@ -49,7 +49,7 @@ module.exports.datastores = {
     *                                                                          *
     ***************************************************************************/
     adapter: 'sails-postgresql',
-    url: 'postgres://postgres:123456@localhost:1337/utopi',
+    url: 'postgres://postgres:123456@localhost:5432/utopi',
 
   },
 

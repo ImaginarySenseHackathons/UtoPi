@@ -34,7 +34,6 @@ module.exports = {
     },
     timestamp: {
       type: 'string',
-      columnType: 'timestamp',
       required: true
     },
 
