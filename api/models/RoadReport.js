@@ -28,8 +28,7 @@ module.exports = {
     //  ╩ ╩╚═╝╚═╝╚═╝╚═╝╩╩ ╩ ╩ ╩╚═╝╝╚╝╚═╝
     locationReport: {
       model: 'locationReport',
-      via: 'roadReport',
-      required: true
+      via: 'roadReport'
     }
 
   },

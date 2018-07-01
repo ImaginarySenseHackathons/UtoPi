@@ -20,9 +20,9 @@ module.exports.bootstrap = async function(done) {
   //   return done();
   // }
   //
-  await User.createEach([
-    { email: 'admin@imaginary.tech', firstName: 'Administrator', lastName: 'Administrator' },
-  ]);
+  // await User.createEach([
+    // { email: 'admin@imaginary.tech', firstName: 'Administrator', lastName: 'Administrator' },
+  // ]);
   // ```
 
   // Don't forget to trigger `done()` when this bootstrap function's logic is finished.

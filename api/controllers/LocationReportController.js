@@ -11,7 +11,7 @@ module.exports = {
     let reports;
     // OPERATIONS
     try {
-      reports = await User.find();
+      reports = await LocationReport.find();
     } catch (err) {
       switch (err.name) {
         case 'UsageError':
@@ -20,6 +20,7 @@ module.exports = {
           return res.serverError(err);
       }
     }
+    sails.log(reports);
     return res.ok(reports);
   },
   postBlockedStreet: async (req, res) => {
@@ -65,7 +66,7 @@ module.exports = {
     sails.log("Are we there yet?");
     // Prepare data for second table
     body[1] = Object.assign( {}, body[1], {
-      locationReport: String(report[1].id)
+      locationreport: report[1].id  // locationreport está en minúscula porque si no no sirve... Más misterios de Sails!
     });
     sails.log(body[1]);
     // Second table
