@@ -40,7 +40,83 @@ module.exports.routes = {
   //  ╠═╣╠═╝║  ║╣ ║║║ ║║╠═╝║ ║║║║║ ║ ╚═╗
   //  ╩ ╩╩  ╩  ╚═╝╝╚╝═╩╝╩  ╚═╝╩╝╚╝ ╩ ╚═╝
 
-  
+  // USER Related
+  'GET /users/': {
+    controller: 'user',
+    action: 'find'
+  },
+  'GET /user/:id': {
+    controller: 'user',
+    action: 'findOne'
+  },
+  'POST /user/': {
+    controller: 'user',
+    action: 'post'
+  },
+  // REPORTS
+  // Location Based
+  'POST /report/blockedstreet': {
+    controller: 'locationReport',
+    action: 'postBlockedStreet'
+  },
+  'POST /report/landfall': {
+    controller: 'locationReport',
+    action: 'postLandFall'
+  },
+  'POST /report/flood': {
+    controller: 'locationReport',
+    action: 'postFlood'
+  },
+
+  // Location based, business related
+  'POST /report/restaurant': {
+    controller: 'locationReport',
+    action: 'postRestaurant'
+  },
+  'POST /report/collectioncenter': {
+    controller: 'locationReport',
+    action: 'postCollectionceter'
+  },
+  'POST /report/oasis': {
+    controller: 'locationReport',
+    action: 'postOasis'
+  },
+  'POST /report/gas': {
+    controller: 'locationReport',
+    action: 'postGas'
+  },
+  'POST /report/powerspots': {
+    controller: 'locationReport',
+    action: 'postSpots'
+  },
+  'POST /report/energy': {
+    controller: 'locationReport',
+    action: 'postEnergy'
+  },
+
+  // Location based, health related
+  'POST /report/pharmacy': {
+    controller: 'locationReport',
+    action: 'postPharmacy'
+  },
+  'POST /report/doctorsOffice': {
+    controller: 'locationReport',
+    action: 'postDoctorsOffice'
+  },
+  'POST /report/vet': {
+    controller: 'locationReport',
+    action: 'postVet'
+  },
+
+  // Trash related
+  'POST /report/trash': {
+    controller: 'locationReport',
+    action: 'postTrash'
+  },
+  'POST /report/recyclingcenter': {
+    controller: 'locationReport',
+    action: 'postRecyclingCenter'
+  },
 
   //  ╦ ╦╔═╗╔╗ ╦ ╦╔═╗╔═╗╦╔═╔═╗
   //  ║║║║╣ ╠╩╗╠═╣║ ║║ ║╠╩╗╚═╗

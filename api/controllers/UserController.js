@@ -9,21 +9,13 @@ module.exports = {
   // GET /user
   // Look for a user info with an id in the database.
   find: async function (req, res) {
-    // VARIABLES
-    let requestingUser = Number(req.token.userId),
-      requestedUser = Number(req.param('id')),
-      userId = await sails.helpers.requestedUser.with({
-        res: res,
-        req: req,
-        requestingUser: requestingUser,
-        requestedUser: requestedUser
-      }),
-      user;
+    // CONST & VARS
+    const userId = Number(req.param('id'));
+    let users;
+    // OPERATIONS
     try {
-      // Attempt to look the user up in the database.
-      user = await User.find(userId);
+      users = await User.find();
     } catch (err) {
-      // If unknown error.
       switch (err.name) {
         case 'UsageError':
           return res.badRequest(err);
@@ -31,27 +23,16 @@ module.exports = {
           return res.serverError(err);
       }
     }
-    if (!user)
-      return res.notFound('User with id \'' + userId + '\' has not been found');
+    if (!users) {
+      return res.notFound('User with id \'' + userId + '\' was not found');
+    }
     return res.ok(user);
   },
   // GET /user/:id
   // Look for a user info with an id in the database.
   findOne: async function (req, res) {
     // VALIDATE
-    if (!req.param('id')) return res.badRequest('Please specify \'id\'');
-    // VARIABLES
-    let requestingUser = Number(req.token.userId),
-      requestedUser = Number(req.param('id')),
-      userId = await sails.helpers.requestedUser.with({
-        res: res,
-        req: req,
-        requestingUser: requestingUser,
-        requestedUser: requestedUser
-      }),
-      user;
     try {
-      // Attempt to look the user up in the database.
       user = await User.findOne(userId);
     } catch (err) {
       // If unknown error.
@@ -66,15 +47,13 @@ module.exports = {
       return res.notFound('User with id \'' + userId + '\' has not been found');
     return res.ok(user);
   },
-// POST /user
+  // POST /user
   // Create a new user in the database
   create: async function (req, res) {
-    // AFTER POLICIES CHECK PERMISSIONS
     // VALIDATE
     if (!req.param('email')) return res.badRequest('Please specify \'email\'');
     if (!req.param('firstName')) return res.badRequest('Please specify \'firstName\'');
     if (!req.param('lastName')) return res.badRequest('Please specify \'lastName\'');
-
     // Add to database
     let user;
     try {
