@@ -11,7 +11,7 @@ module.exports = {
     let reports;
     // OPERATIONS
     try {
-      reports = await LocationReport.find();
+      reports = await LocationReport.find().populate('roadReport');
     } catch (err) {
       switch (err.name) {
         case 'UsageError':
