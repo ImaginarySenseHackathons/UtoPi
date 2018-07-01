@@ -12,46 +12,41 @@ module.exports = {
     //  ╔═╗╦═╗╦╔╦╗╦╔╦╗╦╦  ╦╔═╗╔═╗
     //  ╠═╝╠╦╝║║║║║ ║ ║╚╗╔╝║╣ ╚═╗
     //  ╩  ╩╚═╩╩ ╩╩ ╩ ╩ ╚╝ ╚═╝╚═╝
-    fUllName: {
+    firstName: {
       type: 'string',
       required: true,
-      description: 'Full representation of the user\'s name',
-      maxLength: 120,
-      example: 'Lisa'
     },
-    lastApperance:{
-      type: 'timestamp'
-    },
-    type:{
+    lastName: {
       type: 'string',
-      isIn: ['break', 'through'],
-      required: true
+      required: true,
     },
-    place:{
+    lastAppearance: {
+      type: 'string'
+    },
+    place: {
       type: 'string',
       required: true
     },
-    lat:{
+    lat: {
       type: 'number',
       required: true
     },
-    lng:{
+    lng: {
       type: 'number',
       required: true
     },
-    description:{
+    description: {
       type: 'string',
       required: false
     },
-    timestamp:{
+    type: {
       type: 'string',
-      columnType: 'timestamp',
-      required: true
-    },
-    state:{
-      type: 'string',
-      isIn: ['disappeared', 'dead', 'draft'],
+      isIn: ['disappeared', 'dead'],
       defaultsTo: 'draft'
+    },
+    timestamp: {
+      type: 'string',
+      required: true
     },
 
 

@@ -1,7 +1,8 @@
 /**
- * User.js
+ * BusinessPremises.js
  *
- * A user who can log in to this application.
+ * @description :: A model definition.  Represents a database table/collection/etc.
+ * @docs        :: https://sailsjs.com/docs/concepts/models-and-orm/models
  */
 
 module.exports = {
@@ -12,35 +13,34 @@ module.exports = {
     //  ╠═╝╠╦╝║║║║║ ║ ║╚╗╔╝║╣ ╚═╗
     //  ╩  ╩╚═╩╩ ╩╩ ╩ ╩ ╚╝ ╚═╝╚═╝
 
-    email: {
+    aperture: {
       type: 'string',
-      required: true,
-      unique: true,
-      isEmail: true,
-      maxLength: 200,
+      // time
     },
-    name: {
+    closing: {
       type: 'string',
-      required: true,
-      description: 'Full representation of the user\'s name',
-      maxLength: 120,
-      unique: true,
-      example: 'Lisa'
+      // time
     },
-    lastName: {
+    openingDate: {
       type: 'string',
-      required: true,
-      description: 'Full representation of the user\'s name',
-      maxLength: 120,
-      example: 'Lisa'
+      // date
+    },
+    closingDate: {
+      type: 'string',
+      // date
     },
 
     //  ╔═╗╔═╗╔═╗╔═╗╔═╗╦╔═╗╔╦╗╦╔═╗╔╗╔╔═╗
     //  ╠═╣╚═╗╚═╗║ ║║  ║╠═╣ ║ ║║ ║║║║╚═╗
     //  ╩ ╩╚═╝╚═╝╚═╝╚═╝╩╩ ╩ ╩ ╩╚═╝╝╚╝╚═╝
-    // n/a
+
+    locationReport: {
+      model: 'locationReport',
+      via: 'businessPremises',
+      required: true
+    }
 
   },
 
-
 };
+

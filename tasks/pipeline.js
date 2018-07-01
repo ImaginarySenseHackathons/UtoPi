@@ -67,18 +67,7 @@ var jsFilesToInject = [
   // Bring in `.js` files for any other client-side JavaScript dependencies.
   // (e.g. Lodash, Vue.js, jQuery, Bootstrap, Ember, Angular, etc.)
   // > Be sure to list dependencies that depend on each other in the right order!
-  'dependencies/lodash.js',
-  'dependencies/jquery.min.js',
-  'dependencies/bowser.js',
-  'dependencies/vue.js',
   'dependencies/**/*.js',
-
-  // First amongst the app-level files, bring in cloud configuration
-  'js/cloud.setup.js',
-
-  // Bring in components & utilities before bringing in the rest (i.e. page scripts)
-  'js/components/**/*.js',
-  'js/utilities/**/*.js',
 
   // All of the rest of your custom client-side js files will be injected here,
   // in no particular order.  To customize the ordering, add additional items

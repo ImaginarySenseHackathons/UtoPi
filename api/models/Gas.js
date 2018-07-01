@@ -1,7 +1,8 @@
 /**
- * User.js
+ * Gas.js
  *
- * A user who can log in to this application.
+ * @description :: A model definition.  Represents a database table/collection/etc.
+ * @docs        :: https://sailsjs.com/docs/concepts/models-and-orm/models
  */
 
 module.exports = {
@@ -12,35 +13,26 @@ module.exports = {
     //  ╠═╝╠╦╝║║║║║ ║ ║╚╗╔╝║╣ ╚═╗
     //  ╩  ╩╚═╩╩ ╩╩ ╩ ╩ ╚╝ ╚═╝╚═╝
 
-    email: {
-      type: 'string',
-      required: true,
-      unique: true,
-      isEmail: true,
-      maxLength: 200,
+    price: {
+      type: 'number',
+      min: 0
     },
-    name: {
+    priceUnit: {
       type: 'string',
-      required: true,
-      description: 'Full representation of the user\'s name',
-      maxLength: 120,
-      unique: true,
-      example: 'Lisa'
-    },
-    lastName: {
-      type: 'string',
-      required: true,
-      description: 'Full representation of the user\'s name',
-      maxLength: 120,
-      example: 'Lisa'
+      isIn: ['l', 'gal', 'cm3', 'bbl'],
+      defaultsTo: 'l'
     },
 
     //  ╔═╗╔═╗╔═╗╔═╗╔═╗╦╔═╗╔╦╗╦╔═╗╔╗╔╔═╗
     //  ╠═╣╚═╗╚═╗║ ║║  ║╠═╣ ║ ║║ ║║║║╚═╗
     //  ╩ ╩╚═╝╚═╝╚═╝╚═╝╩╩ ╩ ╩ ╩╚═╝╝╚╝╚═╝
-    // n/a
+    locationReport: {
+      model: 'locationReport',
+      via: 'gas',
+      required: true
+    }
 
   },
 
-
 };
+

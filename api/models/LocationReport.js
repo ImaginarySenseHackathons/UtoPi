@@ -12,48 +12,54 @@ module.exports = {
     //  ╔═╗╦═╗╦╔╦╗╦╔╦╗╦╦  ╦╔═╗╔═╗
     //  ╠═╝╠╦╝║║║║║ ║ ║╚╗╔╝║╣ ╚═╗
     //  ╩  ╩╚═╩╩ ╩╩ ╩ ╩ ╚╝ ╚═╝╚═╝
-    type:{
+    type: {
       type: 'string',
-      isIn: ['break', 'through'],
-      required: true
-   },
-    place:{
+      isIn: ['Blocked Route', 'Landfall', 'Flood', 'Volcanic Eruption']
+    },
+    place: {
       type: 'string',
       required: true
     },
-    lat:{
+    lat: {
       type: 'number',
       required: true
     },
-    lng:{
+    lng: {
       type: 'number',
       required: true
     },
-    description:{
+    description: {
       type: 'string',
       required: false
     },
-    timestamp:{
+    timestamp: {
       type: 'string',
       columnType: 'timestamp',
       required: true
     },
-    state:{
-      type: 'string',
-      isIn: ['collapsed', 'draft'],
-      defaultsTo: 'draft'
-    },
-
-
-
-    //  ╔═╗╔╦╗╔╗ ╔═╗╔╦╗╔═╗
-    //  ║╣ ║║║╠╩╗║╣  ║║╚═╗
-    //  ╚═╝╩ ╩╚═╝╚═╝═╩╝╚═╝
-
 
     //  ╔═╗╔═╗╔═╗╔═╗╔═╗╦╔═╗╔╦╗╦╔═╗╔╗╔╔═╗
     //  ╠═╣╚═╗╚═╗║ ║║  ║╠═╣ ║ ║║ ║║║║╚═╗
     //  ╩ ╩╚═╝╚═╝╚═╝╚═╝╩╩ ╩ ╩ ╩╚═╝╝╚╝╚═╝
+    reportingUser: {
+      model: 'user'
+    },
+    roadReport: {
+      model: 'roadReport',
+      via: 'locationReport'
+    },
+    business: {
+      model: 'business',
+      via: 'locationReport'
+    },
+    businessPremises: {
+      model: 'businessPremises',
+      via: 'locationReport'
+    },
+    gas: {
+      model: 'gas',
+      via: 'locationReport'
+    }
 
   },
 

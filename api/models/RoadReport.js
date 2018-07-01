@@ -1,7 +1,8 @@
 /**
- * User.js
+ * RoadReport.js
  *
- * A user who can log in to this application.
+ * @description :: A model definition.  Represents a database table/collection/etc.
+ * @docs        :: https://sailsjs.com/docs/concepts/models-and-orm/models
  */
 
 module.exports = {
@@ -12,35 +13,26 @@ module.exports = {
     //  ╠═╝╠╦╝║║║║║ ║ ║╚╗╔╝║╣ ╚═╗
     //  ╩  ╩╚═╩╩ ╩╩ ╩ ╩ ╚╝ ╚═╝╚═╝
 
-    email: {
+    state: {
       type: 'string',
-      required: true,
-      unique: true,
-      isEmail: true,
-      maxLength: 200,
+      isIn: ['Collapsed', 'Blocked', 'Partially Blocked', 'Solved']
     },
-    name: {
-      type: 'string',
-      required: true,
-      description: 'Full representation of the user\'s name',
-      maxLength: 120,
-      unique: true,
-      example: 'Lisa'
-    },
-    lastName: {
-      type: 'string',
-      required: true,
-      description: 'Full representation of the user\'s name',
-      maxLength: 120,
-      example: 'Lisa'
-    },
+
+    //  ╔═╗╔╦╗╔╗ ╔═╗╔╦╗╔═╗
+    //  ║╣ ║║║╠╩╗║╣  ║║╚═╗
+    //  ╚═╝╩ ╩╚═╝╚═╝═╩╝╚═╝
+
 
     //  ╔═╗╔═╗╔═╗╔═╗╔═╗╦╔═╗╔╦╗╦╔═╗╔╗╔╔═╗
     //  ╠═╣╚═╗╚═╗║ ║║  ║╠═╣ ║ ║║ ║║║║╚═╗
     //  ╩ ╩╚═╝╚═╝╚═╝╚═╝╩╩ ╩ ╩ ╩╚═╝╝╚╝╚═╝
-    // n/a
+    locationReport: {
+      model: 'locationReport',
+      via: 'roadReport',
+      required: true
+    }
 
   },
 
-
 };
+
