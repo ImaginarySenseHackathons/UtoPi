@@ -11,7 +11,7 @@ module.exports = {
     let reports;
     // OPERATIONS
     try {
-      reports = await LocationReport.find().populate('roadReport');
+      reports = await LocationReport.find();
     } catch (err) {
       switch (err.name) {
         case 'UsageError':
@@ -62,14 +62,17 @@ module.exports = {
           return res.serverError(err, 'Failed to get report');
       }
     }
+    sails.log('Debug: 1');
     // Prepare data for second table
     body[1] = Object.assign( {}, body[1], {
       locationreport: report[1].id  // locationreport está en minúscula porque si no no sirve... Más misterios de Sails!
     });
+    sails.log('Debug: 2')
     // Second table
     try {
       report[2] = await RoadReport.create(body[1]).fetch();
     } catch (err) {
+      sails.log('Debug: 3');
       switch (err.name) {
         case 'UsageError':
           return res.badRequest(err);

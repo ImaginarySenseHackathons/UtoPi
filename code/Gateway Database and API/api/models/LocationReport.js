@@ -43,7 +43,7 @@ module.exports = {
     reportingUser: {
       model: 'user'
     },
-    roadReport: {
+    roadreport: {
       model: 'roadReport',
       via: 'locationReport'
     },
